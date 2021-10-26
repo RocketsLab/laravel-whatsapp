@@ -1,0 +1,51 @@
+{
+  "name": "rocketslab/laravel-whatsapp",
+  "type": "project",
+  "description": "Baileys Whatsapp Wrapper for Laravel.",
+  "keywords": ["whatsapp", "laravel", "baileys"],
+  "license": "MIT",
+  "require": {
+    "php": "^7.4|^8.0",
+    "fruitcake/laravel-cors": "^2.0",
+    "guzzlehttp/guzzle": "^7.0.1",
+    "illuminate/console": "^8.0",
+    "illuminate/support": "^8.0"
+  },
+  "require-dev": {
+    "facade/ignition": "^2.5",
+    "fakerphp/faker": "^1.9.1",
+    "mockery/mockery": "^1.4.4",
+    "nunomaduro/collision": "^5.10",
+    "phpunit/phpunit": "^9.5.10"
+  },
+  "autoload": {
+    "psr-4": {
+      "RocketsLab\\LaravelWhatsapp\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "server": "node ./server/src/app.js http 127.0.0.1 8000"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "RocketsLab\\LaravelWhatsapp\\WhatsappServiceProvider"
+      ],
+      "aliases": {
+        "Whatsapp": "RocketsLab\\LaravelWhatsapp\\Facades\\Whatsapp"
+      }
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
